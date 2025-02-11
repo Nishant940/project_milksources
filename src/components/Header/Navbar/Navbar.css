@@ -1,0 +1,70 @@
+/* General Navbar Styles */
+.header .navbar {
+  display: flex; /* Inline items in desktop */
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  gap: 1rem; /* Add space between links */
+  position: static; /* Reset position for desktop */
+  background: none; /* No background in desktop */
+  width: auto; /* Reset width */
+  padding: 0; /* Reset padding */
+}
+
+/* Navbar Links */
+.header .navbar a {
+  display: inline-block; /* Inline links */
+  color: var(--black); /* Default color */
+  font-size: 1.6rem; /* Adjust size for desktop */
+  margin: 0 1rem; /* Spacing between links */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Hover Effect */
+.header .navbar a:hover {
+  color: var(--orange); /* Highlight on hover */
+}
+
+/* Hide Menu Button in Desktop */
+.header .icons #menu-btn {
+  display: none; /* Hide menu button on larger screens */
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
+  /* Show Menu Button in Mobile */
+  .header .icons #menu-btn {
+    display: inline-block; /* Show menu button */
+  }
+
+  .header .navbar {
+    display: none; /* Hide navbar by default on mobile */
+    position: absolute;
+    top: 110%; /* Dropdown below header */
+    right: 2rem; /* Align to the right */
+    width: 30rem; /* Adjust width */
+    background: #fff; /* White background */
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    flex-direction: column; /* Stack links vertically */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for mobile */
+    transition: all 0.3s ease-in-out; /* Smooth toggle effect */
+  }
+
+  .header .navbar.active {
+    display: flex; /* Show navbar on toggle */
+  }
+
+  .header .navbar a {
+    display: block;
+    font-size: 2rem; /* Adjust font size */
+    margin: 1rem 0;
+    text-align: left;
+    padding-left: 1rem; /* Indent links */
+    width: 100%;
+  }
+}

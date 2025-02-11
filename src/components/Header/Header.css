@@ -1,0 +1,108 @@
+/* General Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: hsl(42, 71%, 46%); /* Softer background for better visuals */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 70px;
+  border-bottom: 2px solid #e0d2c0; /* Subtle border for separation */
+}
+
+/* Logo */
+.logo {
+  max-width: 50px;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Navigation Bar */
+.nav-container {
+  margin-top: 70px; /* Below the header */
+  background-color: #fdf5e6; /* Match header background */
+  border-top: 2px solid #e0d2c0;
+  border-bottom: 2px solid #e0d2c0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Equal spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333; /* Neutral color for links */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: white;
+  background-color: #ff7f50; /* Coral for hover effect */
+}
+
+/* Icons (Right Side of Header) */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icons button {
+  background: #fff;
+  border: 2px solid #e0d2c0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icons button:hover {
+  background-color: #ff7f50;
+  border-color: #ff7f50;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .icons {
+    gap: 0.5rem;
+  }
+}
