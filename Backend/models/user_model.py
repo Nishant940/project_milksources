@@ -1,9 +1,12 @@
-from Backend import db
+from models import db
 
 class User(db.Model):
-    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    carts = db.relationship('Cart', backref='user', cascade='all, delete-orphan')
+    username = db.Column(db.String(50), nullable=False, unique=True)
+    email = db.Column(db.String(100), nullable=False, unique=True)
+    password_hash = db.Column(db.String(256), nullable=False)  # ✅ Hashed password field
+
+    def __init__(self, username, email, password_hash):
+        self.username = username
+        self.email = email
+        self.password_hash = password_hash

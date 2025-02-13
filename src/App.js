@@ -6,6 +6,9 @@ import Features from './components/Features/index';
 import Products from './components/Products/index';
 import Footer from './components/Footer/index';
 import Checkout from './components/checkout/index'; // Import Checkout Page
+import Login from './components/Auth/Login'; // Import Login Page
+import Signup from './components/Auth/Signup'; // Import Signup Page
+import ForgotPassword from './components/Auth/ForgotPassword'; // Import Forgot Password Page
 import './App.css';
 
 function App() {
@@ -31,6 +34,11 @@ function App() {
           
           {/* Checkout Page */}
           <Route path="/checkout" element={<Checkout />} />
+
+          {/* Authentication Pages */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
         
         {/* Footer is visible across all pages */}

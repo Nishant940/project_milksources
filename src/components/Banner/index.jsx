@@ -8,7 +8,7 @@ const Slider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={`${process.env.PUBLIC_URL}/image/01_MILK SOURCES.png`}
+          src={`${process.env.PUBLIC_URL}/image/01_Banner.png`}
           alt="First slide"
         />
       </Carousel.Item>

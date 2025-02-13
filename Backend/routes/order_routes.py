@@ -1,13 +1,15 @@
 from flask import Blueprint, request, jsonify
-from models.order_model import Order
-from app import db
 
-order_bp = Blueprint('order_bp', __name__)
+order = Blueprint('order', __name__)
 
-@order_bp.route('/checkout', methods=['POST'])
+@order.route('/checkout', methods=['POST'])
 def checkout():
-    data = request.get_json()
-    order = Order(**data)
-    db.session.add(order)
-    db.session.commit()
-    return jsonify({'message': 'Order placed successfully'})
+    data = request.json
+    cart_items = data.get('cart', [])
+
+    if not cart_items:
+        return jsonify({'message': 'Cart is empty'}), 400
+
+    # यहाँ ऑर्डर डेटाबेस में सेव करें
+
+    return jsonify({'message': 'Order placed successfully!'}), 201
